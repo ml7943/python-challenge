@@ -57,10 +57,10 @@ with open(pybank_csv, 'r') as csvfile:
 
 # Construct the result string
 result = f"Total number of months: {len_month}\n"
-result += f"Net total amount of 'Profit/Losses': {total_financials}\n"
-result += f"Average change in 'Profit/Losses': {average_change}\n"
-result += f"Maximum change: {max_change} in {max_change_date}\n"
-result += f"Minimum change: {min_change} in {min_change_date}\n"
+result += f"Net total amount of 'Profit/Losses': ${total_financials}\n"
+result += f"Average change in 'Profit/Losses': ${average_change}\n"
+result += f"Maximum change: ${max_change} in {max_change_date}\n"
+result += f"Minimum change: ${min_change} in {min_change_date}\n"
 
 # Print the analysis to the terminal
 print(result)

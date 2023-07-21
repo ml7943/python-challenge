@@ -14,8 +14,10 @@ with open(pypoll_csv, 'r') as csvfile:
     
     # Loop throught the rows to get the total number of votes cast and the list of candidates
     for row in csvreader:
+        # Calculate the total number of votes cast
         len_cast += 1
         candidate = row[2]
+        # Get the list of candidates and the number of votes for each candidate
         if candidate in candidates:
             candidates[candidate] += 1
         else:
@@ -27,11 +29,14 @@ unique_candidates = np.unique(list(candidates.keys()))
 # Construct the result string
 result = ""
 for candidate in unique_candidates:
+    # Calculate the number and percentage of votes each candidate won
     vote_count = candidates[candidate]
     vote_percentage = (vote_count / len_cast) * 100
     winner = max(candidates, key=candidates.get)
-    result += f"{candidate}: {vote_count}, {vote_percentage:.2f}%. The winner is {winner}\n"
+    result += f"{candidate}: {vote_count}, {vote_percentage:.2f}%. \n"
 
+result += f"Winner: {winner}"
+result += f"\nTotal number of votes: {len_cast}"
 # Print the analysis to the terminal
 print(result)
 
